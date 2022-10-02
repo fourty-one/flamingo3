@@ -1,0 +1,59 @@
+@use '../../styles/global/_mixins' as mixins;
+
+.hero {
+	background-attachment: fixed;
+	background-image: url('../../assets/images/hero-bg.jpeg');
+
+	&__container {
+		height: 80vh;
+		min-height: 600px;
+	}
+
+	&__content {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		transform-style: preserve-3d;
+	}
+}
+
+.hero-content {
+	width: 42%;
+	height: 32%;
+	border: 1px solid var(--color-yellow-metal);
+
+	@include mixins.for-phone {    
+	 	width: 70%;
+	   	height: auto;
+	}
+
+	&:before {
+		content: '';
+		position: absolute;
+		inset: -0.5rem;
+		background-color: var(--color-white);
+		transform: translateZ(-1px);
+	}
+
+	&__title {
+		font-size: 3rem;
+		letter-spacing: 8px;
+	}
+
+	&__subtitle {
+		margin-top: 2.4rem;
+		font-size: 1.4rem;
+		letter-spacing: 5px;
+
+		&:before {
+			content: '';
+			position: absolute;
+			top: -20px;
+			left: 18%;
+			right: 18%;
+			height: 1px;
+			background-color: var(--color-yellow-metal);
+		}
+	}
+}
