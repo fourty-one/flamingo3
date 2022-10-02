@@ -1,0 +1,51 @@
+@use '../../styles/global/_mixins' as mixins;
+
+.about {
+	background-color: var(--color-yellow-metal);
+	
+	&__container {
+		height: 100%;
+		padding: 5rem 0;
+	}
+
+	&__title {
+		margin-bottom: 2rem;
+	}
+
+	&__text {
+		margin: 0 auto;
+		max-width: 60%;
+		font-size: 1.6rem;
+		line-height: 40px;
+
+		@include mixins.for-phone {    
+	   		max-width: 90%;
+	   		line-height: 30px;
+	 	}
+	}
+
+	&__qualities {
+		margin: 2rem auto 0 auto;
+		width: 65%;
+
+		@include mixins.for-phone {    
+	   		width: 100%;
+	 	}
+	}
+}
+
+.qualities {
+	&__item {
+		@include mixins.for-phone {    
+	   		width: 50%;
+		}
+	}
+}
+
+.quality {
+	&__icon {
+		font-size: 8rem;
+		width: auto;
+		height: auto;
+	}
+}
