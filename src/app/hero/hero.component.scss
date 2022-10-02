@@ -24,8 +24,9 @@
 	border: 1px solid var(--color-yellow-metal);
 
 	@include mixins.for-phone {    
-	 	width: 70%;
+	 	width: 85%;
 	   	height: auto;
+	   	padding: 1rem 0;
 	}
 
 	&:before {
@@ -39,6 +40,10 @@
 	&__title {
 		font-size: 3rem;
 		letter-spacing: 8px;
+
+		@include mixins.for-phone {    
+		 	font-size: 2.4rem;
+		}
 	}
 
 	&__subtitle {
