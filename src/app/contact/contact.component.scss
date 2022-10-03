@@ -1,0 +1,65 @@
+@use '../../styles/global/_mixins' as mixins;
+
+.contact {
+	background-color: var(--color-fantasy);
+
+	&__container {
+		padding: 8rem 0;
+	}
+
+	&__title {
+		margin-bottom: 2rem;
+	}
+
+	&__info {
+		display: block;
+		font-size: 1.4rem;
+		letter-spacing: 2px;
+
+		@include mixins.for-phone {    
+			max-width: 95%;
+	 	}
+	}
+
+	&__form {
+		width: 60%;
+		height: 20rem;
+		margin: 2rem auto;
+		margin: 2rem auto 0 auto;
+		align-content: space-between;
+
+		@include mixins.for-phone {    
+			width: 85%;
+	   		height: auto;
+	 	}
+	}
+
+	&__label {
+		display: block;
+		margin-bottom: 0.45rem;
+	}
+
+	&__input {
+		padding: 0.5rem;
+		font-size: 1.2rem;
+		width: 46%;
+		border: 1px solid var(--color-yellow-metal);
+		background-color: transparent;
+		margin-bottom: 0.8rem;
+
+		@include mixins.for-phone {    
+			width: 95%;
+	 	}
+	}
+
+	&__submit-button {
+		position: absolute;
+		right: 0;
+		bottom: -15%;
+		width: 40%;
+
+		@include mixins.for-phone {    
+			width: 100%;
+	 	}
+	}
+}
