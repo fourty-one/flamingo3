@@ -1,0 +1,24 @@
+.footer {
+	background-color: var(--color-yellow-metal);
+
+	&__container {
+		padding-top: 3rem;
+		padding-bottom: 1rem;
+		font-size: 1.2rem;
+	}
+
+	&__icon {
+		font-size: 3rem;
+		width: auto;
+		height: 2.8rem;
+	}
+
+	&__button, &__socials {
+		margin-bottom: 2rem;
+	}
+
+	&__link {
+		margin-bottom: 0.4rem;
+	}
+
+}
