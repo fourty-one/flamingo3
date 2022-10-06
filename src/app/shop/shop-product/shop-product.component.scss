@@ -1,0 +1,18 @@
+.shop-product {
+
+	&__image, &__name, &__cost, &__counter {
+		margin-bottom: 0.6rem;
+	}
+
+	&__add-button {
+		width: 100%;
+		padding: 0.8rem 0;
+		background-color: var(--color-tuatara);
+	}
+}
+
+.counter {
+	width: 100%;
+	padding: 0.3rem 0.2rem;
+	border: 1px solid var(--color-black);
+}

@@ -1,3 +1,5 @@
+@use '../../styles/global/_mixins' as mixins;
+
 .shop {
 
 	&__container {
@@ -9,7 +11,7 @@
 	}
 
 	&__products {
-		width: 80%;
+		width: 85%;
 		margin: 0 auto;
 	}	
 }
@@ -17,8 +19,14 @@
 .products {
 	&__item {
 		width: 32%;
-		height: 26rem;
-		border: 1px solid black;
 		margin-bottom: 1rem;
+
+		@include mixins.for-phone {    
+		 	width: 100%;
+		}
+
+		@include mixins.for-tablet {    
+		 	width: 49%;
+		}
 	}
 }
