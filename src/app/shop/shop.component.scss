@@ -1,0 +1,24 @@
+.shop {
+
+	&__container {
+		padding: 8rem 0;
+	}
+
+	&__title {
+		margin-bottom: 3rem;
+	}
+
+	&__products {
+		width: 80%;
+		margin: 0 auto;
+	}	
+}
+
+.products {
+	&__item {
+		width: 32%;
+		height: 26rem;
+		border: 1px solid black;
+		margin-bottom: 1rem;
+	}
+}
