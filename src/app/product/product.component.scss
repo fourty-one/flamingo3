@@ -1,0 +1,84 @@
+@use '../../styles/global/_mixins' as mixins;
+
+.product {
+	&-overlay {
+		position: fixed;
+		inset: 0;
+		background-color: rgba(0, 0, 0, 0.2);
+	}
+
+	&__container {
+		width: 50%;
+		height: 79%;
+		padding: 2rem;
+		padding-top: 3rem;
+		overflow: scroll;
+
+		@include mixins.for-tablet {    
+			width: 80%;
+			height: 85%;
+	 	}
+
+	 	@include mixins.for-phone {    
+			width: 95%;
+			height: 80%;
+			flex-direction: column;
+	 	}
+	}
+
+	&__close-button {
+		position: absolute;
+		right: 1rem;
+		top: 1.2rem;
+	}
+
+	&__icon {
+		width: auto;
+		height: auto;
+		font-size: 2rem;
+	}
+
+	&-cw-1 {
+		width: 57%;
+
+		@include mixins.for-phone {   
+			width: 100%;
+	 	}
+	}
+
+	&-cw-2 {
+		width: 39%;
+
+		@include mixins.for-phone {   
+			width: 100%;  
+	 	}
+	}
+
+	&__name {
+		font-size: 2rem;
+		margin-bottom: 1rem;
+	}
+
+	&__id, &__cost, &__section, &__text {
+		margin-bottom: 0.4rem;
+		font-size: 1.1rem;
+	}
+
+	&__section {
+		font-size: 1.6rem;
+	}
+
+	&__add-button {
+		width: 100%;
+		padding: 0.8rem 0;
+		background-color: var(--color-yellow-metal);
+		margin-bottom: 2rem;
+	}
+}
+
+.counter {
+	width: 40%;
+	margin: 1rem 0;
+	padding: 0.1rem;
+	border: 1px solid var(--color-black);
+}

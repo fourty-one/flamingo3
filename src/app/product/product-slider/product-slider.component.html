@@ -1,0 +1,28 @@
+<swiper
+	[slidesPerView]="1"
+	class="product-slider"
+>
+	<ng-template swiperSlide>
+		<img 
+		   	src="../../../assets/images/product-image-1m.jpeg" 
+		   	alt="product image"
+		  	class="shop-product__image"
+		>
+	</ng-template>
+</swiper>
+<swiper
+	(swiper)="thumbsSwiper = $event"
+	[spaceBetween]="10"
+	[slidesPerView]="8"
+	[freeMode]="true"
+	[watchSlidesProgress]="true"
+	class="product-thumbs-slider"
+>
+   	<ng-template swiperSlide>
+		<img 
+		   	src="../../../assets/images/product-image-1m.jpeg" 
+		   	alt="product image"
+		  	class="shop-product__image"
+		>
+	</ng-template>
+</swiper>
