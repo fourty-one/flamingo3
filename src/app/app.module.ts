@@ -15,6 +15,7 @@ import { ShopComponent } from './shop/shop.component';
 import { ShopProductComponent } from './shop/shop-product/shop-product.component';
 import { ProductComponent } from './product/product.component';
 import { ProductSliderComponent } from './product/product-slider/product-slider.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ProductSliderComponent } from './product/product-slider/product-slider.
     ShopComponent,
     ShopProductComponent,
     ProductComponent,
-    ProductSliderComponent
+    ProductSliderComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

@@ -12,7 +12,6 @@
 		height: 79%;
 		padding: 2rem;
 		padding-top: 3rem;
-		overflow: scroll;
 
 		@include mixins.for-tablet {    
 			width: 80%;
@@ -23,6 +22,7 @@
 			width: 95%;
 			height: 80%;
 			flex-direction: column;
+			overflow: scroll;
 	 	}
 	}
 
