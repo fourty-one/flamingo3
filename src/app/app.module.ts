@@ -2,8 +2,11 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
+import { StoreModule } from '@ngrx/store';
 import { MatIconModule } from '@angular/material/icon';
 import { SwiperModule } from 'swiper/angular';
+
+import { reducers } from './store/app.reducer';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -34,6 +37,7 @@ import { CartComponent } from './cart/cart.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    StoreModule.forRoot(reducers),
     MatIconModule,
     SwiperModule
   ],
