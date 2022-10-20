@@ -22,7 +22,11 @@
 			</ul>
 		</nav>
 
-		<button class="header__cart btn-reset flex flex-end items-center yellow-metal">
+		<button 
+			class="header__cart btn-reset flex flex-end items-center yellow-metal"
+			aria-label="Open the cart"
+			routerLink="cart"
+		>
 			<mat-icon class="header-cart__icon header__icon">shopping_cart</mat-icon>
 			<span class="header-cart__quantity white medium">0</span>
 		</button>

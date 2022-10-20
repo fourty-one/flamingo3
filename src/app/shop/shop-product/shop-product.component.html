@@ -5,15 +5,24 @@
     	class="shop-product__image"
     >
     
-    <span class="shop-product__name">I'm a Product</span>
-    <span class="shop-product__cost">&#36; 20.00</span>
+    <span class="shop-product__name">{{ product.name }}</span>
+    <span class="shop-product__cost">&#36;{{ product.price }}</span>
 
     <div class="shop-product__counter counter flex space-between items-center">
-    	<button class="counter__minus-button btn-reset">
+    	<button 
+            class="counter__minus-button btn-reset"
+            (click)="quantity = quantity - 1"
+            [disabled]="quantity < 2"
+            aria-label="Minus one"
+        >
     		<mat-icon class="counter__icon">remove</mat-icon>
     	</button>
-    	<span class="counter__amount">1</span>
-    	<button class="counter__plus-button btn-reset">
+    	<span class="counter__amount">{{ quantity }}</span>
+    	<button 
+            class="counter__plus-button btn-reset"
+            (click)="quantity = quantity + 1"
+            aria-label="Plus one"
+        >
     		<mat-icon class="counter__icon">add</mat-icon>
     	</button>
     </div>

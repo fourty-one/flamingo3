@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 
 import SwiperCore, { Thumbs } from 'swiper';
 SwiperCore.use([Thumbs]);
@@ -10,6 +10,7 @@ SwiperCore.use([Thumbs]);
   encapsulation: ViewEncapsulation.None
 })
 export class ProductSliderComponent implements OnInit {
+  @Input('images') images: string[];
   thumbsSwiper: any;
   
   constructor() { }

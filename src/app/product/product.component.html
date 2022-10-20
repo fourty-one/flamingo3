@@ -1,23 +1,27 @@
 <section class="product">
 	<div class="product-overlay"></div>
-	<div class="product__container window-container flex space-between yellow-metal">
-		<button class="product__close-button btn-reset black">
+	<div 
+		class="product__container window-container flex space-between yellow-metal"
+		*ngIf="(data$ | async)['product'] as product"
+	>
+		<button 
+			class="product__close-button btn-reset black"
+			aria-label="Close"
+			routerLink="root"
+		>
 			<mat-icon class="product__icon">close</mat-icon>
 		</button>
 
 		<div class="product-cw-1 flex flex-column">
-			<app-product-slider></app-product-slider>
-			<p class="product__text">
-				I'm a product description. This is a great place to "sell" 
-				your product and grab buyers' attention. Describe your 
-				product clearly and concisely. Use unique keywords. Write 
-				your own description instead of using manufacturers' copy.
-			</p>
+			<app-product-slider
+				[images]="product.images"
+			></app-product-slider>
+			<p class="product__text">{{ product.description }}</p>
 		</div>
 		<div class="product-cw-2 flex flex-column">
-			<span class="product__name">I'm a Product</span>
-			<span class="product__id">SKU: 0001</span>
-			<span class="product__cost">&#36;20.00</span>
+			<span class="product__name">{{ product.name }}</span>
+			<span class="product__id">SKU: {{ product.id }}</span>
+			<span class="product__cost">&#36;{{ product.price | number: '1.2-2' }}</span>
 
 			<div class="product__counter counter flex space-between items-center">
 		    	<button class="counter__minus-button btn-reset">
