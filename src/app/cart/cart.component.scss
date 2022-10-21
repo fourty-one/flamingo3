@@ -65,6 +65,7 @@
 		border: 2px solid rgba(0, 0, 0, 0.2);
 		border-left: none;
 		border-bottom: none;
+		overflow-y: scroll;
 
 		@include mixins.for-phone {    
 			width: 100%;

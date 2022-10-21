@@ -1,6 +1,6 @@
 {
   "name": "flamingo3",
-  "version": "0.162",
+  "version": "0.166",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
