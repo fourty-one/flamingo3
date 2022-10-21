@@ -2,6 +2,11 @@
   width: 100%;
 }
 
+.swiper-slide-thumb-active {
+  border: 2px solid var(--color-yellow-metal);
+  opacity: 1;
+}
+
 .swiper {
   margin: 0;
 
@@ -13,6 +18,4 @@
   }
 }
 
-.shop-product__image {
-  margin-bottom: 1rem;
-}
+

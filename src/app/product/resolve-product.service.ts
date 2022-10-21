@@ -24,7 +24,6 @@ export class ResolveProductService implements Resolve<Product> {
     })
 
     this.shop.unsubscribe();
-    console.log(this.product.id);
 
     return new Promise((resolve, reject) => {
       resolve(this.product);
