@@ -1,12 +1,19 @@
 <div class="shop-product flex flex-column items-center">
-    <img 
-    	src="{{ product.images[0] }}" 
-    	alt="product image"
-    	class="shop-product__image"
+    <button 
+        class="shop-product__more-button btn-reset relative"
+        [routerLink]="['product', product.id]"
+        aria-label="More info"
     >
+        <img 
+        	src="{{ product.images[0] }}" 
+        	alt="product image"
+        	class="shop-product__image"
+        >
+        <div class="shop-product__image-overlay text-center">More info</div>
+    </button>
     
     <span class="shop-product__name">{{ product.name }}</span>
-    <span class="shop-product__cost">&#36;{{ product.price }}</span>
+    <span class="shop-product__cost">&#36;{{ product.price | number: '1.2-2' }}</span>
 
     <div class="shop-product__counter counter flex space-between items-center">
     	<button 

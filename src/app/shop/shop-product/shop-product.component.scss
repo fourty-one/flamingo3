@@ -1,6 +1,6 @@
 .shop-product {
 
-	&__image, &__name, &__cost, &__counter {
+	&__name, &__cost, &__counter {
 		margin-bottom: 0.6rem;
 	}
 
@@ -8,6 +8,30 @@
 		width: 100%;
 		padding: 0.8rem 0;
 		background-color: var(--color-tuatara);
+	}
+
+	&__more-button {
+		margin-bottom: 1rem;
+		overflow: hidden;
+	}
+
+	&__more-button:hover &__image-overlay, 
+	&__more-button:focus &__image-overlay  {
+		transform: translateY(0);
+	}
+
+	&__image {
+		&-overlay {
+			position: absolute;
+			bottom: 5%;
+			left: 0;
+			width: 100%;
+			padding: 1rem 0;
+			font-size: 1.2rem;
+			transform: translateY(100%);
+			transition: 0.2s transform;
+			background-color: rgba(255, 255, 255, 0.8);
+		}
 	}
 }
 
