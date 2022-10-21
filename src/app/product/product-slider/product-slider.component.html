@@ -5,7 +5,7 @@
 >
 	<ng-template swiperSlide *ngFor="let image of images">
 		<img 
-		   	src="{{ image }}" 
+		   	[src]="image" 
 		   	alt="product"
 		  	class="shop-product__image"
 		>

@@ -12,23 +12,13 @@
 		<span class="cart__section">My cart</span>
 
 		<ul class="cart__products products">
-			<li class="products__item">
-				<app-cart-product></app-cart-product>
-			</li>
-			<li class="products__item">
-				<app-cart-product></app-cart-product>
-			</li>
-			<li class="products__item">
-				<app-cart-product></app-cart-product>
-			</li>
-			<li class="products__item">
-				<app-cart-product></app-cart-product>
-			</li>
-			<li class="products__item">
-				<app-cart-product></app-cart-product>
-			</li>
-			<li class="products__item">
-				<app-cart-product></app-cart-product>
+			<li class="products__item" *ngFor="let product of (shop$ | async).cart">
+				<app-cart-product
+					[product]="product"
+					(incrementCartQuantity)="incrementCartQuantity($event)"
+					(decrementCartQuantity)="decrementCartQuantity($event)"
+					(removeFromCart)="removeFromCart($event)"
+				></app-cart-product>
 			</li>
 		</ul>
 

@@ -5,7 +5,7 @@
         aria-label="More info"
     >
         <img 
-        	src="{{ product.images[0] }}" 
+        	[src]="product.images[0]" 
         	alt="product image"
         	class="shop-product__image"
         >
@@ -34,5 +34,9 @@
     	</button>
     </div>
 
-    <button class="shop-product__add-button btn-reset white semi-bold">Add to Cart</button>
+    <button 
+        class="shop-product__add-button btn-reset white semi-bold"
+        (click)="add()"
+        aria-label="Add product to cart"
+    >Add to Cart</button>
 </div>

@@ -2,27 +2,35 @@
 	<button 
 			class="cart-product__close-button btn-reset black"
 			aria-label="Remove product from cart"
+			(click)="removeFromCart.emit(product.id)"
 		>
 		<mat-icon class="cart__icon">close</mat-icon>
 	</button>
 
     <img 
-    	src="https://31il.cyou/images/product-image-11.jpeg" 
+    	[src]="product.images[0]"
     	alt="product"
     	class="cart-product__image"
     >
 
-    <span class="cart-product__name">Product</span>
+    <span class="cart-product__name">{{ product.name }}</span>
 
     <div class="cart-product__counter counter flex space-between items-center">
-	   	<button class="counter__minus-button btn-reset">
+	   	<button 
+	   		class="counter__minus-button btn-reset"
+	   		(click)="decrementCartQuantity.emit(product.id)"
+			[disabled]="product.quantity < 2"
+		>
 	   		<mat-icon class="counter__icon">remove</mat-icon>
 	   	</button>
-	   	<span class="counter__amount">1</span>
-	   	<button class="counter__plus-button btn-reset">
+	   	<span class="counter__amount">{{ product.quantity }}</span>
+	   	<button 
+	   		class="counter__plus-button btn-reset"
+	   		(click)="incrementCartQuantity.emit(product.id)"
+	   	>
 	   		<mat-icon class="counter__icon">add</mat-icon>
 	   	</button>
 	</div>
 
-	<span class="cart-product__cost">&#36;20.00</span>
+	<span class="cart-product__cost">&#x24;{{ (product.price * product.quantity) | number: '1.2-2' }}</span>
 </div>

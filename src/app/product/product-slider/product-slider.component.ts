@@ -16,7 +16,6 @@ export class ProductSliderComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.images)
   }
 
 }
