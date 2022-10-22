@@ -1,6 +1,9 @@
 <section class="cart">
 	<div class="cart-overlay"></div>
-	<div class="cart__container window-container flex flex-column flex-wrap yellow-metal">
+	<div 
+		class="cart__container window-container flex flex-column flex-wrap yellow-metal"
+		*ngIf="(shop$ | async).cart as cart"
+	>
 		<button 
 			class="cart__close-button btn-reset black"
 			aria-label="Close"
@@ -12,7 +15,7 @@
 		<span class="cart__section">My cart</span>
 
 		<ul class="cart__products products">
-			<li class="products__item" *ngFor="let product of (shop$ | async).cart">
+			<li class="products__item" *ngFor="let product of cart">
 				<app-cart-product
 					[product]="product"
 					(incrementCartQuantity)="incrementCartQuantity($event)"
@@ -26,12 +29,12 @@
 
 		<article class="cart__line cart-line flex space-between">
 			<span class="cart-line__name">Subtotal</span>
-			<span class="cart-line__value">&#36;0.00</span>
+			<span class="cart-line__value">&#36;{{ cart | totalPrice | number: '1.2-2' }}</span>
 		</article>
 
 		<article class="cart__line cart-line flex space-between">
 			<span class="cart-line__name">Total</span>
-			<span class="cart-line__value">&#36;0.00</span>
+			<span class="cart-line__value">&#36;{{ cart | totalPrice | number: '1.2-2' }}</span>
 		</article>
 
 		<button class="cart__checkout-button btn-reset white semi-bold">Checkout</button>

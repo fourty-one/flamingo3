@@ -28,7 +28,9 @@
 			routerLink="cart"
 		>
 			<mat-icon class="header-cart__icon header__icon">shopping_cart</mat-icon>
-			<span class="header-cart__quantity white medium">0</span>
+			<span class="header-cart__quantity white medium">
+				{{ (shop$ | async).cart | quantityAll }}
+			</span>
 		</button>
 
 		<button class="header__menu btn-reset yellow-metal" aria-label="Open the menu">

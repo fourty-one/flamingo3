@@ -21,6 +21,9 @@ import { ProductSliderComponent } from './product/product-slider/product-slider.
 import { CartComponent } from './cart/cart.component';
 import { CartProductComponent } from './cart/cart-product/cart-product.component';
 
+import { TotalPricePipe } from './core/pipes/total-price.pipe'; 
+import { QuantityAllPipe } from './core/pipes/quantity-all.pipe'; 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +37,9 @@ import { CartProductComponent } from './cart/cart-product/cart-product.component
     ProductComponent,
     ProductSliderComponent,
     CartComponent,
-    CartProductComponent
+    CartProductComponent,
+    TotalPricePipe,
+    QuantityAllPipe,
   ],
   imports: [
     BrowserModule,
