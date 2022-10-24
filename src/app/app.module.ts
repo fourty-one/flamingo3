@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { StoreModule } from '@ngrx/store';
 import { MatIconModule } from '@angular/material/icon';
 import { SwiperModule } from 'swiper/angular';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { reducers } from './store/app.reducer';
 
 import { AppComponent } from './app.component';
@@ -44,6 +44,7 @@ import { QuantityAllPipe } from './core/pipes/quantity-all.pipe';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     StoreModule.forRoot(reducers),
     MatIconModule,
     SwiperModule

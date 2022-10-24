@@ -4,22 +4,51 @@
 		<span class="contact__info text-center">123-456-7890 / info@mysite.com</span>
 		<span class="contact__info text-center">500 Terry Francois Street San Francisco, CA 94158</span>
 
-		<form class="contact__form flex flex-column flex-wrap relative">
+		<form 
+			class="contact__form flex flex-column flex-wrap relative"
+			[formGroup]="contactForm"
+			(ngSubmit)="onSubmit()"
+		>
 			<label for="first-name" class="contact__label">First Name</label>
-	  		<input type="text" id="first-name" name="first-name" class="contact__input main-input">
+	  		<input 
+	  			type="text" 
+	  			formControlName="firstName" 
+	  			id="first-name" 
+	  			name="first-name" 
+	  			class="contact__input main-input"
+	  		>
 
 	  		<label for="last-name" class="contact__label">Last Name</label>
-	 		<input type="text" id="last-name" name="last-name" class="contact__input main-input">
+	 		<input 
+	 			type="text" 
+	 			formControlName="lastName" 
+	 			id="last-name" 
+	 			name="last-name" 
+	 			class="contact__input main-input"
+	 		>
 
 	 		<label for="email" class="contact__label">Email</label>
-	 		<input type="text" id="email" name="email" class="contact__input main-input">
+	 		<input 
+	 			type="text" 
+	 			formControlName="email" 
+	 			id="email" 
+	 			name="email" 
+	 			class="contact__input main-input"
+	 		>
 
 	 		<label for="subject" class="contact__label">Subject</label>
-	 		<input type="text" id="subject" name="subject" class="contact__input main-input">
+	 		<input 
+	 			type="text" 
+	 			formControlName="subject" 
+	 			id="subject" 
+	 			name="subject" 
+	 			class="contact__input main-input"
+	 		>
 			
 			<label for="message" class="contact__label">Message</label>
 	  		<textarea 
 	  			type="text" 
+	  			formControlName="message" 
 	  			id="message" 
 	  			name="message" 
 	  			class="contact__input contact__input--message main-input" 
@@ -27,7 +56,11 @@
 	  			wrap="hard"
 	  		></textarea>
 
-	  		<button class="contact__submit-button btn-reset main-button">
+	  		<button 
+	  			class="contact__submit-button btn-reset main-button"
+	  			type="submit" 
+	  			[disabled]="!contactForm.valid"
+	  		>
 				Submit
 			</button>
 		</form>
