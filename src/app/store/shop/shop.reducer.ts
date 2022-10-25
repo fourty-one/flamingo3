@@ -12,12 +12,18 @@ export interface State {
 }
 
 const initialState: State = {
-  products: products,
+  products: [],
   cart: []
 };
 
 export const shoppingListReducer = createReducer(
 	initialState,
+  on(ShopActions.ProductsLoadedSuccess, (state, { products }) => { 
+    return { ...state, products: products, }; 
+  }),
+  on(ShopActions.ProductsLoadedError, (state) => { 
+    return { ...state, products: products, }; 
+  }),
 	on(ShopActions.IncrementCartQuantity, (state, { productId }) => { 
     let updatedCart = [...state.cart];
       	

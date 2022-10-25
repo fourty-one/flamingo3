@@ -2,11 +2,15 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 import { MatIconModule } from '@angular/material/icon';
 import { SwiperModule } from 'swiper/angular';
 import { ReactiveFormsModule } from '@angular/forms';
+
 import { reducers } from './store/app.reducer';
+import { ProductsEffects } from './effects/products.effects';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -44,8 +48,10 @@ import { QuantityAllPipe } from './core/pipes/quantity-all.pipe';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     ReactiveFormsModule,
     StoreModule.forRoot(reducers),
+    EffectsModule.forRoot([ProductsEffects]),
     MatIconModule,
     SwiperModule
   ],
