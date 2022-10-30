@@ -1,0 +1,43 @@
+@use '../../styles/global/_mixins' as mixins;
+
+.search {
+	&-overlay {
+		position: fixed;
+		inset: 0;
+		background-color: rgba(0, 0, 0, 0.2);
+	}
+
+	&__container {
+		width: 24%;
+		height: 68%;
+		padding: 2rem;
+		padding-top: 3rem;
+
+		@include mixins.for-tablet {    
+			width: 80%;
+			height: 60%;
+	 	}
+
+	 	@include mixins.for-phone {    
+			width: 95%;
+			height: 68%;
+			min-height: 50vh;
+			flex-direction: column;
+	 	}
+	}
+
+	&__close-button {
+		position: absolute;
+		right: 1rem;
+		top: 1.2rem;
+	}
+
+	&__input {
+		padding: 0.5rem;
+		font-size: 1.2rem;
+		width: 90%;
+		border: 1px solid var(--color-yellow-metal);
+		background-color: transparent;
+		margin-bottom: 0.8rem;
+	}
+}
