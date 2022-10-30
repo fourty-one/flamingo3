@@ -1,40 +1,25 @@
 <header class="header">
 	<div class="header__container container flex space-between items-center">
-		<label for="header-search" class="header__label flex space-between items-center yellow-metal">
-			<mat-icon class="header__icon">search</mat-icon>
-			<input type="text" id="header-search" class="header__search" placeholder="Search..." aria-label="Search">
-		</label>
+		<img src="../../assets/images/flamingo-logo.png" alt="Flamingo logo" class="header__logo">
 
-		<nav class="header__nav nav">
-			<ul class="nav__list flex space-between items-center yellow-metal medium">
-				<li class="nav__item">
-					<a href="#" class="nav__link">Home</a>
-				</li>
-				<li class="nav__item">
-					<a href="#" class="nav__link">Shop</a>
-				</li>
-				<li class="nav__item">
-					<a href="#" class="nav__link">Contact</a>
-				</li>
-				<li class="nav__item">
-					<a href="#" class="nav__link">Home</a>
-				</li>
-			</ul>
-		</nav>
-
-		<button 
-			class="header__cart btn-reset flex flex-end items-center yellow-metal"
-			aria-label="Open the cart"
-			routerLink="cart"
-		>
-			<mat-icon class="header-cart__icon header__icon">shopping_cart</mat-icon>
-			<span class="header-cart__quantity white medium">
-				{{ (shop$ | async).cart | quantityAll }}
-			</span>
-		</button>
-
-		<button class="header__menu btn-reset yellow-metal" aria-label="Open the menu">
-			<mat-icon class="header__icon">menu</mat-icon>
-		</button>
+		<ul class="header__controls flex">
+			<li class="header__button">
+				<button 
+					class="header__cart-button btn-reset flex flex-end items-center yellow-metal"
+					aria-label="Open the cart"
+					routerLink="cart"
+				>
+					<mat-icon class="header__icon">shopping_cart</mat-icon>
+					<span class="header-cart__quantity white medium">
+						{{ (shop$ | async).cart | quantityAll }}
+					</span>
+				</button>
+			</li>
+			<li class="header__button">
+				<button class="header__search-button btn-reset yellow-metal" aria-label="Search">
+					<mat-icon class="header__icon">search</mat-icon>
+				</button>
+			</li>
+		</ul>
 	</div>
 </header>
