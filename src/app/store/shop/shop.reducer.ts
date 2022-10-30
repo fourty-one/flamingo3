@@ -9,11 +9,13 @@ import { products } from '../../core/data/products';
 export interface State {
   products: Product[];
   cart: Product[];
+  isNotificationShow: boolean;
 }
 
 const initialState: State = {
   products: [],
-  cart: []
+  cart: [],
+  isNotificationShow: false
 };
 
 export const shoppingListReducer = createReducer(
@@ -98,4 +100,10 @@ export const shoppingListReducer = createReducer(
 
       	return { ...state, cart: updatedCart };
 	}),
+  on(ShopActions.ShowNotification, (state) => { 
+    return { ...state, isNotificationShow: true }; 
+  }),
+  on(ShopActions.HideNotification, (state) => { 
+    return { ...state, isNotificationShow: false }; 
+  }),
 )

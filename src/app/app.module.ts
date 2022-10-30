@@ -8,6 +8,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { MatIconModule } from '@angular/material/icon';
 import { SwiperModule } from 'swiper/angular';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { reducers } from './store/app.reducer';
 import { ProductsEffects } from './effects/products.effects';
@@ -55,7 +56,8 @@ import { SearchComponent } from './search/search.component';
     StoreModule.forRoot(reducers),
     EffectsModule.forRoot([ProductsEffects]),
     MatIconModule,
-    SwiperModule
+    SwiperModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -23,10 +23,21 @@ export class ProductComponent implements OnInit {
   ngOnInit() { }
 
   addToCart(product: Product): void {
+    this.showNotification();
+
     this.store.dispatch(fromShop.AddProductToCart({ 
       product: { ...product, quantity: this.quantity } 
     }));
-    
     this.quantity = 1;
+
+    setTimeout(this.hideNotification.bind(this), 4000);
+  }
+
+  showNotification() {
+    this.store.dispatch(fromShop.ShowNotification());
+  }
+
+  hideNotification() {
+    this.store.dispatch(fromShop.HideNotification());
   }
 }

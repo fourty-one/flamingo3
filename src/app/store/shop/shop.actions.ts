@@ -34,3 +34,11 @@ export const DecrementCartQuantity = createAction(
   '[Shop] DecrementCartQuantity',
   props<{ productId: number }>()
 );
+
+export const ShowNotification = createAction(
+  '[Shop] ShowNotification',
+);
+
+export const HideNotification = createAction(
+  '[Shop] HideNotification',
+);

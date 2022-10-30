@@ -13,5 +13,12 @@
 				></app-shop-product>
 			</li>
 		</ul>
+
+		<button 
+			class="shop__notification-button white"
+			routerLink="cart"
+			(click)="hideNotification()"
+			[@notification]="(shop$ | async).isNotificationShow ? 'show' : 'hide'"
+		>Open cart</button>
 	</div>
 </section>
